@@ -1,0 +1,71 @@
+-- 1. Listar pedidos com valor maior que 100.
+SELECT * FROM pedidos WHERE valor > 100;
+
+-- 2. Listar clientes da cidade “Paranaguá”.
+SELECT * FROM clientes WHERE cidade = 'Paranaguá';
+
+-- 3. Listar pedidos com valor entre 100 e 200.
+SELECT * FROM pedidos WHERE valor BETWEEN 100 AND 200;
+
+-- 4. Listar pedidos feitos entre ‘2023-01-01’ e ‘2023-12-31’.
+SELECT * FROM pedidos WHERE data BETWEEN '2023-01-01' AND '2023-12-31';
+
+-- 5. Nome do cliente e valor do pedido.
+SELECT c.nome, p.valor FROM pedidos p JOIN clientes c ON p.cliente_id = c.id;
+
+-- 6. Todos os clientes, mesmo os que não têm pedidos.
+SELECT c.nome, p.valor FROM clientes c LEFT JOIN pedidos p ON c.id = p.cliente_id;
+
+-- 7. Total de pedidos por cliente.
+SELECT c.nome, COUNT(p.id) AS total_pedidos FROM clientes c
+LEFT JOIN pedidos p ON c.id = p.cliente_id
+GROUP BY c.nome;
+
+-- 8. Valor médio dos pedidos.
+SELECT AVG(valor) AS media_pedidos FROM pedidos;
+
+-- 9. Clientes com mais de 2 pedidos.
+SELECT c.nome, COUNT(p.id) AS total_pedidos FROM clientes c
+JOIN pedidos p ON c.id = p.cliente_id
+GROUP BY c.nome
+HAVING COUNT(p.id) > 2;
+
+-- 10. Inserir cliente “Lucas”, cidade “Antonina”.
+INSERT INTO clientes (nome, cidade) VALUES ('Lucas', 'Antonina');
+
+-- 11. Novo pedido para Lucas com valor 250.00 e data atual.
+INSERT INTO pedidos (cliente_id, valor, data)
+VALUES (
+  (SELECT id FROM clientes WHERE nome = 'Lucas' LIMIT 1),
+  250.00,
+  DATE('now')
+);
+
+-- 12. Atualizar nome do cliente ID 5 para “Pedro Henrique”.
+UPDATE clientes SET nome = 'Pedro Henrique' WHERE id = 5;
+
+-- 13. Aumentar 10% no valor dos pedidos acima de R$ 100,00.
+UPDATE pedidos SET valor = valor * 1.10 WHERE valor > 100;
+
+-- 14. Excluir pedidos com valor menor que 100.
+DELETE FROM pedidos WHERE valor < 100;
+
+-- 15. Excluir cliente “Carlos”.
+DELETE FROM clientes WHERE nome = 'Carlos';
+
+-- 16. Criar tabela `produtos` com id, nome e preço.
+CREATE TABLE produtos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  preco REAL NOT NULL
+);
+
+-- 17. Adicionar campo `email` à tabela `clientes`.
+ALTER TABLE clientes ADD COLUMN email TEXT;
+
+-- 18. Criar view `vw_total_pedidos` com total de pedidos por cliente.
+CREATE VIEW vw_total_pedidos AS
+SELECT c.nome, COUNT(p.id) AS total_pedidos
+FROM clientes c
+LEFT JOIN pedidos p ON c.id = p.cliente_id
+GROUP BY c.nome;
