@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- MENU PRINCIPAL -->
+  <div id="menu">
+    <h1>Space Invaders</h1>
+    <img id="menuShip" src="sprites/ship.png" alt="Nave Menu">
+    <button id="startButton">Iniciar Jogo</button>
+    <button id="aboutButton">Sobre</button>
+  </div>
+
+  <!-- INFORMAÇÕES SOBRE O JOGO -->
+  <div id="info" style="display:none;">
+    <h2>Sobre o Jogo</h2>
+
+    <h3>Controles:</h3>
+    <ul>
+      <li>← / → : Mover nave</li>
+      <li>Espaço : Atirar</li>
+      <li>P : Pausar</li>
+      <li>R : Reiniciar (só no pause ou game over)</li>
+    </ul>
+
+    <h3>Sprites:</h3>
+    <div class="spriteRow">
+      <div class="spriteItem">
+        <img src="sprites/ship.png" width="50" alt="Nave">
+        <p>Nave</p>
+      </div>
+      <div class="spriteItem">
+        <img src="sprites/enemy.png" width="40" alt="Inimigos">
+        <p>Inimigos</p>
+      </div>
+      <div class="spriteItem">
+        <img src="sprites/life.png" width="30" alt="Power-up Vida">
+        <p>Vida</p>
+      </div>
+      <div class="spriteItem">
+        <img src="sprites/double.png" width="30" alt="Power-up Duplo">
+        <p>Tiros Duplos</p>
+      </div>
+    </div>
+
+    <button id="backButton">Voltar</button>
+  </div>
+
+  <!-- CANVAS DO JOGO -->
+  <canvas id="gameCanvas" width="800" height="600" style="display:none;"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>

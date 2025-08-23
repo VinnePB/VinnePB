@@ -1,0 +1,110 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Undertale', monospace;
+    color: white;
+}
+
+/* Canvas do jogo */
+canvas {
+    border: 2px solid white;
+    background-color: black;
+    display: block;
+}
+
+/* Placar animado */
+.score {
+    font-family: 'Undertale', monospace;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    animation: pulseFade 1s infinite;
+}
+
+@keyframes pulseFade {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Texto de Pause */
+.pauseText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Undertale', monospace;
+    font-size: 48px;
+    color: yellow;
+    text-align: center;
+    pointer-events: none;
+    animation: fadeScale 1s forwards;
+}
+
+@keyframes fadeScale {
+    0% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+/* Feedback de gol */
+.feedback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Undertale', monospace;
+    font-size: 48px;
+    color: yellow;
+    text-align: center;
+    pointer-events: none;
+    animation: fadeScale 1s forwards;
+}
+
+/* Menu */
+.menuText {
+    font-family: 'Undertale', monospace;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.menuText.selected {
+    color: yellow;
+}
+
+/* Placeholder para gif ou png de controles */
+.controlsImg {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 150px;
+    height: auto;
+}
+
+/* Paddle glow/afterimage */
+.paddleAfterimage {
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Texto de Score/Feedback central */
+.centralText {
+    font-family: 'Undertale', monospace;
+    font-size: 48px;
+    color: yellow;
+    text-align: center;
+    pointer-events: none;
+}
