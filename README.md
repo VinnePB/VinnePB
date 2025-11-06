@@ -1,6 +1,6 @@
-- 👋 Hi, I’m Vinicius
+- 👋 Hey there, i'm Vinicius or Vee to be short
 - 👀 I’m interested in learning new things and improving myself
-- 🌱 I’m currently learning javascript and lua
+- 🌱 Currently Learning JS and Lua
 - 😄 Pronouns: he/him
 
 <!---
