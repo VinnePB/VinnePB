@@ -1,9 +1,5 @@
-- 👋 Hey there, i'm Vinicius or Vee to be short
-- 👀 I’m interested in learning new things and improving myself
-- 🌱 Currently Learning JS and Lua
-- 😄 Pronouns: he/him
-
-<!---
-VinnePB/VinnePB is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Hey, i'm Vinicius, i'm a small developer.
+22 y'old
+I work around with JavaScript and Lua, but, currently i'm trying to improve with what i already have learnt and try new things or languages.
+Mainly work off making sites and or some other small projects related to College.
+3rd Year Information System at Isulpar - Paranaguá, Brazil.
